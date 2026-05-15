@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>BD_AKASH_NUMBER_HACK - UNLOCKED</title>
+<title>BD_AKASH_NUMBER_HACK - NO LOCK</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -50,7 +50,6 @@ body {
   box-shadow: 0 8px 18px rgba(45,140,240,0.2);
 }
 
-/* PREDICTION PANEL */
 .photo-card {
   width: 100%; 
   background: var(--card-grad); 
@@ -67,7 +66,6 @@ body {
   transition: all 0.3s ease;
 }
 
-/* HIDE BUTTON */
 .hide-button {
   position: absolute;
   top: 5px;
@@ -86,12 +84,6 @@ body {
   transition: all 0.3s ease;
 }
 
-.hide-button:hover {
-  transform: scale(1.1);
-  background: rgba(255,65,108,0.3);
-}
-
-/* PANEL CONTENT */
 .panel-content {
   width: 100%;
   display: flex;
@@ -196,6 +188,28 @@ body {
   to { transform: rotate(360deg); } 
 }
 
+/* GAME IFRAME */
+.game-wrap {
+  position: fixed; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  background: #000;
+  transition: top 0.3s ease;
+}
+.game-wrap.number-hidden { 
+  top: 120px; 
+}
+.game-wrap:not(.number-hidden) { 
+  top: 230px; 
+}
+.game-iframe { 
+  width: 100%; 
+  height: 100%; 
+  border: 0; 
+  display: block; 
+}
+
 /* PANEL HIDDEN STATE */
 .photo-card.panel-hidden .panel-content,
 .photo-card.panel-hidden .title,
@@ -223,21 +237,15 @@ body {
   font-size: 14px;
   white-space: nowrap;
 }
-
-/* Hide button always visible */
-.photo-card.panel-hidden .hide-button {
-  display: flex !important;
-  z-index: 300;
-}
 </style>
 </head>
 <body>
+
 <div class="top-panel">
   <div class="container">
     <a href="https://t.me/JARA_PROFIT" class="open-tele" target="_blank">JOIN TELEGRAM CHANNEL</a>
 
     <div class="photo-card" id="photoCard">
-      
       <div class="hide-button" id="hideButton" onclick="togglePanel()">😈</div>
       
       <div class="panel-content" id="panelContent">
@@ -256,16 +264,20 @@ body {
           <div class="pill"><div id="pill2">-</div><div class="loader-inner" id="load2"></div></div>
           <div class="pill"><div id="pill3">-</div><div class="loader-inner" id="load3"></div></div>
         </div>
-        
-        <div style="margin-top: 10px; font-size: 12px; color: #00ff00;" id="successBadge">✅ Panel Unlocked!</div>
+        <div style="margin-top: 10px; font-size: 12px; color: #00ff00;">✅ Panel Unlocked & Ready!</div>
       </div>
     </div>
   </div>
 </div>
 
+<div class="game-wrap number-hidden" id="gameWrap">
+  <iframe class="game-iframe" id="gameFrame"
+    src="https://20bdwin24.com/register?inviteCode=Y6WKYAN&from=web"
+    allowfullscreen></iframe>
+</div>
+
 <script>
 (function(){
-  // ========== ELEMENTS ==========
   const p1 = document.getElementById('pill1');
   const p2 = document.getElementById('pill2');
   const p3 = document.getElementById('pill3');
@@ -275,23 +287,19 @@ body {
   const seriesText = document.getElementById('seriesText');
   const sizeText = document.getElementById('sizeText');
   const toggle = document.getElementById('photoToggle');
+  const wrap = document.getElementById('gameWrap');
   const photoCard = document.getElementById('photoCard');
   const hideButton = document.getElementById('hideButton');
   
-  // ========== VARIABLES ==========
   let lastPeriod = null;
   let isPanelHidden = false;
   
-  // ========== WANTEDSCARY'S LOGIC VARIABLES ==========
-  const B_POOL = [5, 6, 7, 8, 9];  // BIG numbers
-  const S_POOL = [0, 1, 2, 3, 4];  // SMALL numbers
-  let currentNums = [];  // 3 numbers store honge
+  const B_POOL = [5, 6, 7, 8, 9];
+  const S_POOL = [0, 1, 2, 3, 4];
+  let currentNums = [];
 
-  // ========== HIDE/SHOW FUNCTION ==========
   window.togglePanel = function() {
-    // Toggle hide state
     isPanelHidden = !isPanelHidden;
-    
     if (isPanelHidden) {
       photoCard.classList.add('panel-hidden');
       hideButton.innerHTML = '👁️';
@@ -299,26 +307,11 @@ body {
       photoCard.classList.remove('panel-hidden');
       hideButton.innerHTML = '😈';
     }
-    
-    localStorage.setItem('panelHidden', isPanelHidden ? 'true' : 'false');
   }
 
-  // ========== START PREDICTION LOGIC DIRECTLY ==========
-  startPredictionLogic();
-  
   function startPredictionLogic() {
     fetchPrediction();
     setInterval(fetchPrediction, 3000);
-    
-    // Check if panel was hidden before
-    const wasHidden = localStorage.getItem('panelHidden') === 'true';
-    if (wasHidden) {
-      isPanelHidden = true;
-      photoCard.classList.add('panel-hidden');
-      hideButton.innerHTML = '👁️';
-    } else {
-      hideButton.innerHTML = '😈';
-    }
   }
   
   async function fetchPrediction() {
@@ -332,22 +325,15 @@ body {
       const nextPrediction = bigCount > 2 ? "BIG" : "SMALL";
 
       if (lastPeriod !== latest.issueNumber) {
-        const number = parseInt(latest.number);
         const nextPeriod = BigInt(latest.issueNumber) + 1n;
         seriesText.textContent = 'PERIOD | ' + nextPeriod.toString().slice(-3);
-        
+
         if (nextPrediction === "BIG") {
           const pool = [...B_POOL];
-          const num1 = pool[Math.floor(Math.random() * pool.length)];
-          const num2 = pool.filter(x => x !== num1)[Math.floor(Math.random() * (pool.length - 1))];
-          const num3 = pool.filter(x => x !== num1 && x !== num2)[Math.floor(Math.random() * (pool.length - 2))];
-          currentNums = [num1, num2, num3];
+          currentNums = Array.from({length: 3}, () => pool[Math.floor(Math.random() * pool.length)]);
         } else {
           const pool = [...S_POOL];
-          const num1 = pool[Math.floor(Math.random() * pool.length)];
-          const num2 = pool.filter(x => x !== num1)[Math.floor(Math.random() * (pool.length - 1))];
-          const num3 = pool.filter(x => x !== num1 && x !== num2)[Math.floor(Math.random() * (pool.length - 2))];
-          currentNums = [num1, num2, num3];
+          currentNums = Array.from({length: 3}, () => pool[Math.floor(Math.random() * pool.length)]);
         }
 
         sizeText.textContent = nextPrediction;
@@ -364,12 +350,10 @@ body {
         lastPeriod = latest.issueNumber;
       }
     } catch (e) {
-      console.error('Prediction error:', e);
       seriesText.textContent = 'PERIOD | ERROR';
     }
   }
-  
-  // ========== LOADER FUNCTIONS ==========
+
   function showLoaders(){
     [l1,l2,l3].forEach(l => l.style.display='block');
     [p1,p2,p3].forEach(p => p.style.visibility='hidden');
@@ -377,21 +361,20 @@ body {
   
   function hideLoaders(){
     [l1,l2,l3].forEach(l => l.style.display='none');
-    if (toggle.checked) {
-      [p1,p2,p3].forEach(p => p.style.visibility='visible');
-    }
+    [p1,p2,p3].forEach(p => p.style.visibility='visible');
   }
 
-  // Toggle functionality
   toggle.addEventListener('change', () => {
     if (toggle.checked) {
       [p1,p2,p3].forEach(p => p.style.visibility='visible');
+      wrap.classList.remove('number-hidden');
     } else {
       [p1,p2,p3].forEach(p => p.style.visibility='hidden');
+      wrap.classList.add('number-hidden');
     }
   });
   
-  console.log('🚀 Unlocked Panel Ready!');
+  startPredictionLogic();
 })();
 </script>
 </body>
