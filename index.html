@@ -3,186 +3,396 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>TLB TEAM VIP - SXT9 HACK</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;900&display=swap" rel="stylesheet">
+<title>BD_AKASH_NUMBER_HACK - UNLOCKED</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #000000;
-  --panel-bg: #0d0d13;
-  --card-bg: #1a1a24;
-  --accent-cyan: #00f0ff;
-  --accent-pink: #ff0055;
-  --green: #00ff66;
-  --yellow: #ffcc00;
+  --bg: #000;
+  --tele-blue-start: #5fd3ff;
+  --tele-blue-end: #2d8cf0;
+  --card-grad: linear-gradient(90deg,#b3e5ff,#c7a6ff,#ffb6e6);
+  --pill-bg: linear-gradient(180deg,#071026,#021020);
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* { box-sizing: border-box; }
 body {
-  background: var(--bg); color: #fff;
-  font-family: 'Inter', sans-serif;
-  display: flex; justify-content: center;
-  padding: 15px;
+  margin: 0; background: var(--bg); color: #fff;
+  font-family: 'Inter', sans-serif; overflow-x: hidden;
 }
-.wrapper {
-  width: 100%; max-width: 400px;
-  display: flex; flex-direction: column; gap: 15px;
+.top-panel { 
+  position: fixed; 
+  top: 10px; 
+  left: 0; 
+  right: 0;
+  display: flex; 
+  justify-content: center; 
+  z-index: 1000;
 }
-.exit-btn {
-  align-self: flex-start; background: var(--accent-pink);
-  color: #fff; font-weight: 700; font-size: 12px;
-  padding: 8px 16px; border-radius: 20px; text-transform: uppercase;
+.container { 
+  width: 100%; 
+  max-width: 420px; 
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  gap: 10px;
+  padding: 0 12px;
 }
-.header-title {
-  text-align: center; font-size: 20px; font-weight: 900;
-  color: #fff; letter-spacing: 1px; margin-bottom: 5px;
-}
-.header-title span { color: var(--accent-cyan); }
-
-/* MAIN PANEL */
-.main-panel {
-  background: var(--panel-bg); border-radius: 24px;
-  padding: 20px; border: 2px solid #252538;
-  box-shadow: 0 0 25px rgba(0,240,255,0.05);
-  display: flex; flex-direction: column; gap: 15px;
-}
-.info-row { display: flex; justify-content: space-between; font-size: 13px; color: #8e8e9f; font-weight: 700; }
-.next-timer { color: var(--accent-pink); }
-.next-timer span { color: var(--green); }
-.jackpot-text { text-align: center; font-size: 14px; font-weight: 700; color: var(--accent-cyan); }
-
-.signal-display {
-  display: flex; align-items: center; justify-content: center; gap: 15px; margin: 15px 0;
-}
-.signal-text {
-  font-size: 48px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;
-  text-shadow: 0 0 15px rgba(255,255,255,0.1);
-}
-.multiplier {
-  border: 2px solid var(--accent-cyan); border-radius: 12px;
-  padding: 8px 12px; font-size: 20px; font-weight: 900; color: #fff;
+.open-tele {
+  width: 100%; 
+  text-align: center;
+  background: linear-gradient(90deg,var(--tele-blue-start),var(--tele-blue-end));
+  color: #fff; 
+  font-weight: 900; 
+  font-size: 14px;
+  letter-spacing: 1px; 
+  border-radius: 8px; 
+  padding: 10px 12px;
+  text-decoration: none; 
+  box-shadow: 0 8px 18px rgba(45,140,240,0.2);
 }
 
-.accuracy-section { display: flex; flex-direction: column; gap: 8px; font-size: 12px; color: #8e8e9f; font-weight: 700; }
-.acc-header { display: flex; justify-content: space-between; }
-.progress-bar { width: 100%; height: 8px; background: #1a1a26; border-radius: 4px; overflow: hidden; }
-.progress-fill { width: 85%; height: 100%; background: linear-gradient(90deg, #9b51e0, var(--accent-cyan)); border-radius: 4px; }
-
-/* STATS GRID */
-.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.stat-box {
-  background: var(--card-bg); border-radius: 16px; padding: 15px;
-  display: flex; flex-direction: column; align-items: center; gap: 5px;
-  border: 1px solid #252535;
+/* PREDICTION PANEL */
+.photo-card {
+  width: 100%; 
+  background: var(--card-grad); 
+  border-radius: 12px;
+  padding: 14px; 
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 8px;
+  text-align: center;
+  position: relative;
+  min-height: 180px;
+  transition: all 0.3s ease;
 }
-.stat-label { font-size: 11px; color: #8e8e9f; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-.stat-val { font-size: 26px; font-weight: 900; }
-.color-win { color: var(--green); }
-.color-loss { color: var(--accent-pink); }
-.color-acc { color: var(--accent-cyan); }
-.color-streak { color: var(--yellow); }
+
+/* HIDE BUTTON */
+.hide-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 200;
+  background: rgba(0,0,0,0.5);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ff416c;
+  transition: all 0.3s ease;
+}
+
+.hide-button:hover {
+  transform: scale(1.1);
+  background: rgba(255,65,108,0.3);
+}
+
+/* PANEL CONTENT */
+.panel-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.title { 
+  font-size: 16px; 
+  font-weight: 900; 
+  color: #001b2e; 
+}
+.row-show { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 8px; 
+}
+.show-text { 
+  font-size: 13px; 
+  font-weight: 800; 
+  color: #012b3a; 
+}
+.small-switch { 
+  position: relative; 
+  width: 46px; 
+  height: 24px; 
+}
+.small-switch input { 
+  opacity: 0; 
+  width: 0; 
+  height: 0; 
+}
+.small-slider { 
+  position: absolute; 
+  inset: 0; 
+  border-radius: 20px;
+  background: rgba(0,0,0,0.25); 
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.small-slider:before { 
+  content: ""; 
+  position: absolute; 
+  left: 4px; 
+  top: 4px;
+  width: 16px; 
+  height: 16px; 
+  border-radius: 50%; 
+  background: #ff8b6b; 
+  transition: 0.3s;
+}
+.small-switch input:checked + .small-slider {
+  background: linear-gradient(90deg,#7efcc5,#2de6a1);
+}
+.small-switch input:checked + .small-slider:before {
+  transform: translateX(22px); 
+  background: #fff;
+}
+.series-text { 
+  font-weight: 900; 
+  font-size: 14px; 
+  color: #022b36; 
+}
+.size-text { 
+  font-weight: 900; 
+  font-size: 15px; 
+  color: #ff8b6b; 
+}
+.pills { 
+  display: flex; 
+  justify-content: center; 
+  gap: 10px; 
+  margin-top: 6px; 
+}
+.pill {
+  width: 60px; 
+  height: 42px; 
+  border-radius: 25px;
+  background: var(--pill-bg); 
+  color: #dfffe7;
+  font-weight: 900; 
+  font-size: 20px;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6),inset 0 -6px 12px rgba(255,255,255,0.02);
+  position: relative; 
+  overflow: hidden;
+}
+.loader-inner {
+  position: absolute;
+  width: 28px; 
+  height: 28px;
+  border: 4px solid rgba(255,255,255,0.2);
+  border-top-color: #00d4ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: none;
+}
+@keyframes spin { 
+  to { transform: rotate(360deg); } 
+}
+
+/* PANEL HIDDEN STATE */
+.photo-card.panel-hidden .panel-content,
+.photo-card.panel-hidden .title,
+.photo-card.panel-hidden .row-show,
+.photo-card.panel-hidden .series-text,
+.photo-card.panel-hidden .size-text,
+.photo-card.panel-hidden .pills {
+  display: none !important;
+}
+
+.photo-card.panel-hidden {
+  min-height: 60px;
+  background: linear-gradient(90deg,#330000,#660000);
+  position: relative;
+}
+
+.photo-card.panel-hidden::after {
+  content: "Panel Hidden 😈";
+  color: #ff416c;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+/* Hide button always visible */
+.photo-card.panel-hidden .hide-button {
+  display: flex !important;
+  z-index: 300;
+}
 </style>
 </head>
 <body>
+<div class="top-panel">
+  <div class="container">
+    <a href="https://t.me/JARA_PROFIT" class="open-tele" target="_blank">JOIN TELEGRAM CHANNEL</a>
 
-<div class="wrapper">
-  <div class="exit-btn">EXIT PANEL</div>
-  <div class="header-title">TLB TEAM VIP - <span>HACK</span></div>
-  
-  <div class="main-panel">
-    <div class="info-row">
-      <div id="periodText">PERIOD: FETCHING...</div>
-      <div class="next-timer">NEXT: <span id="timerText">--s</span></div>
-    </div>
-    <div class="jackpot-text">SYSTEM FILTER ACTIVE</div>
-    
-    <div class="signal-display">
-      <div class="signal-text" id="sizeText">WAIT</div>
-      <div class="multiplier">1X</div>
-    </div>
-    
-    <div class="accuracy-section">
-      <div class="acc-header">
-        <div>ANALYSIS ACCURACY</div>
-        <div id="analysisAcc">85%</div>
+    <div class="photo-card" id="photoCard">
+      
+      <div class="hide-button" id="hideButton" onclick="togglePanel()">😈</div>
+      
+      <div class="panel-content" id="panelContent">
+        <div class="title">🐯 BD_AKASH_NUMBER_HACK 🐯</div>
+        <div class="row-show">
+          <div class="show-text">Show Number</div>
+          <label class="small-switch">
+            <input type="checkbox" id="photoToggle" checked>
+            <span class="small-slider"></span>
+          </label>
+        </div>
+        <div class="series-text" id="seriesText">PERIOD | ---</div>
+        <div class="size-text" id="sizeText">--</div>
+        <div class="pills">
+          <div class="pill"><div id="pill1">-</div><div class="loader-inner" id="load1"></div></div>
+          <div class="pill"><div id="pill2">-</div><div class="loader-inner" id="load2"></div></div>
+          <div class="pill"><div id="pill3">-</div><div class="loader-inner" id="load3"></div></div>
+        </div>
+        
+        <div style="margin-top: 10px; font-size: 12px; color: #00ff00;" id="successBadge">✅ Panel Unlocked!</div>
       </div>
-      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
     </div>
-  </div>
-
-  <div class="stats-grid">
-    <div class="stat-box"><div class="stat-label">WINS</div><div class="stat-val color-win" id="winCount">70</div></div>
-    <div class="stat-box"><div class="stat-label">LOSS</div><div class="stat-val color-loss" id="lossCount">19</div></div>
-    <div class="stat-box"><div class="stat-label">ACCURACY</div><div class="stat-val color-acc" id="boxAcc">79%</div></div>
-    <div class="stat-box"><div class="stat-label">STREAK</div><div class="stat-val color-streak" id="streakCount">1</div></div>
   </div>
 </div>
 
 <script>
 (function(){
-  const periodText = document.getElementById('periodText');
-  const timerText = document.getElementById('timerText');
+  // ========== ELEMENTS ==========
+  const p1 = document.getElementById('pill1');
+  const p2 = document.getElementById('pill2');
+  const p3 = document.getElementById('pill3');
+  const l1 = document.getElementById('load1');
+  const l2 = document.getElementById('load2');
+  const l3 = document.getElementById('load3');
+  const seriesText = document.getElementById('seriesText');
   const sizeText = document.getElementById('sizeText');
-  const analysisAcc = document.getElementById('analysisAcc');
-  const progressFill = document.getElementById('progressFill');
+  const toggle = document.getElementById('photoToggle');
+  const photoCard = document.getElementById('photoCard');
+  const hideButton = document.getElementById('hideButton');
   
+  // ========== VARIABLES ==========
   let lastPeriod = null;
+  let isPanelHidden = false;
+  
+  // ========== WANTEDSCARY'S LOGIC VARIABLES ==========
+  const B_POOL = [5, 6, 7, 8, 9];  // BIG numbers
+  const S_POOL = [0, 1, 2, 3, 4];  // SMALL numbers
+  let currentNums = [];  // 3 numbers store honge
 
-  // কাউন্টডাউন টাইমার সিমুলেশন (১ মিনিটের উইনগো গেমের জন্য)
-  setInterval(() => {
-    const now = new Date();
-    const seconds = now.getSeconds();
-    const remaining = 60 - seconds;
-    timerText.textContent = remaining + 's';
-  }, 1000);
+  // ========== HIDE/SHOW FUNCTION ==========
+  window.togglePanel = function() {
+    // Toggle hide state
+    isPanelHidden = !isPanelHidden;
+    
+    if (isPanelHidden) {
+      photoCard.classList.add('panel-hidden');
+      hideButton.innerHTML = '👁️';
+    } else {
+      photoCard.classList.remove('panel-hidden');
+      hideButton.innerHTML = '😈';
+    }
+    
+    localStorage.setItem('panelHidden', isPanelHidden ? 'true' : 'false');
+  }
 
-  fetchPrediction();
-  setInterval(fetchPrediction, 2500);
-
+  // ========== START PREDICTION LOGIC DIRECTLY ==========
+  startPredictionLogic();
+  
+  function startPredictionLogic() {
+    fetchPrediction();
+    setInterval(fetchPrediction, 3000);
+    
+    // Check if panel was hidden before
+    const wasHidden = localStorage.getItem('panelHidden') === 'true';
+    if (wasHidden) {
+      isPanelHidden = true;
+      photoCard.classList.add('panel-hidden');
+      hideButton.innerHTML = '👁️';
+    } else {
+      hideButton.innerHTML = '😈';
+    }
+  }
+  
   async function fetchPrediction() {
     try {
       const response = await fetch("https://draw.ar-lottery01.com/WinGo/WinGo_1M/GetHistoryIssuePage.json");
       const data = await response.json();
-      if (!data || !data.data || !data.data.list.length) return;
-      
       const latest = data.data.list[0];
 
+      const last5 = data.data.list.slice(0, 5).map(x => x.number >= 5 ? "BIG" : "SMALL");
+      const bigCount = last5.filter(x => x === "BIG").length;
+      const nextPrediction = bigCount > 2 ? "BIG" : "SMALL";
+
       if (lastPeriod !== latest.issueNumber) {
+        const number = parseInt(latest.number);
         const nextPeriod = BigInt(latest.issueNumber) + 1n;
-        periodText.textContent = 'PERIOD: ' + nextPeriod.toString();
-
-        const historyList = data.data.list.slice(0, 20);
-        const results = historyList.map(x => parseInt(x.number) >= 5 ? "BIG" : "SMALL");
-        const totalBig = results.filter(x => x === "BIG").length;
-        const totalSmall = results.filter(x => x === "SMALL").length;
-
-        let decision = "WAIT";
-        let conf = 50;
-
-        if (totalBig >= 13) { decision = "SMALL"; conf = 85; }
-        else if (totalSmall >= 13) { decision = "BIG"; conf = 85; }
-        else {
-          let last3 = results.slice(0, 3);
-          if(last3.every(x => x === "BIG")) { decision = "SMALL"; conf = 82; }
-          else if(last3.every(x => x === "SMALL")) { decision = "BIG"; conf = 82; }
-        }
-
-        if (decision === "WAIT") {
-          sizeText.textContent = "WAIT";
-          sizeText.style.color = "#ffffff";
-          analysisAcc.textContent = "50%";
-          progressFill.style.width = "50%";
+        seriesText.textContent = 'PERIOD | ' + nextPeriod.toString().slice(-3);
+        
+        if (nextPrediction === "BIG") {
+          const pool = [...B_POOL];
+          const num1 = pool[Math.floor(Math.random() * pool.length)];
+          const num2 = pool.filter(x => x !== num1)[Math.floor(Math.random() * (pool.length - 1))];
+          const num3 = pool.filter(x => x !== num1 && x !== num2)[Math.floor(Math.random() * (pool.length - 2))];
+          currentNums = [num1, num2, num3];
         } else {
-          sizeText.textContent = decision;
-          sizeText.style.color = (decision === "BIG") ? "#ff0055" : "#00f0ff";
-          analysisAcc.textContent = conf + "%";
-          progressFill.style.width = conf + "%";
+          const pool = [...S_POOL];
+          const num1 = pool[Math.floor(Math.random() * pool.length)];
+          const num2 = pool.filter(x => x !== num1)[Math.floor(Math.random() * (pool.length - 1))];
+          const num3 = pool.filter(x => x !== num1 && x !== num2)[Math.floor(Math.random() * (pool.length - 2))];
+          currentNums = [num1, num2, num3];
         }
+
+        sizeText.textContent = nextPrediction;
+        sizeText.style.color = nextPrediction === "BIG" ? '#ff8b6b' : '#4cc9ff';
+        
+        showLoaders();
+        setTimeout(() => {
+          hideLoaders();
+          p1.textContent = currentNums[0];
+          p2.textContent = currentNums[1];
+          p3.textContent = currentNums[2];
+        }, 2000);
+
         lastPeriod = latest.issueNumber;
       }
     } catch (e) {
-      console.error(e);
+      console.error('Prediction error:', e);
+      seriesText.textContent = 'PERIOD | ERROR';
     }
   }
+  
+  // ========== LOADER FUNCTIONS ==========
+  function showLoaders(){
+    [l1,l2,l3].forEach(l => l.style.display='block');
+    [p1,p2,p3].forEach(p => p.style.visibility='hidden');
+  }
+  
+  function hideLoaders(){
+    [l1,l2,l3].forEach(l => l.style.display='none');
+    if (toggle.checked) {
+      [p1,p2,p3].forEach(p => p.style.visibility='visible');
+    }
+  }
+
+  // Toggle functionality
+  toggle.addEventListener('change', () => {
+    if (toggle.checked) {
+      [p1,p2,p3].forEach(p => p.style.visibility='visible');
+    } else {
+      [p1,p2,p3].forEach(p => p.style.visibility='hidden');
+    }
+  });
+  
+  console.log('🚀 Unlocked Panel Ready!');
 })();
 </script>
 </body>
-  </html>
+</html>
